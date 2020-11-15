@@ -13,30 +13,21 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
-        Thread thread =new Thread()
-        {
-            public void run()
-            {
+        Thread thread = new Thread() {
+            public void run() {
 
-                try
-                {
+                try {
                     sleep(3000);
-                    Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish();
 
-                }
-                catch (InterruptedException e)
-                {
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
 
-
-
             }
-
-
 
 
         };

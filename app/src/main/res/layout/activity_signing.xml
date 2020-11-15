@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#fff"
     tools:context=".signing">
+
 
     <ImageView
         android:id="@+id/m1"
@@ -12,57 +16,86 @@
         android:layout_height="138dp"
         android:layout_margin="10dp"
         android:src="@drawable/ins"
+        android:layout_gravity="center"
 
-        app:layout_constraintBottom_toTopOf="@id/tt1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
-        />
-    <EditText
-        android:id="@+id/tt1"
+        tools:ignore="UnknownId" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="15"
+        >
 
-        android:inputType="textPersonName"
-        android:hint="Enter your name"
-        android:textSize="20dp"
 
-        app:layout_constraintStart_toStartOf="@id/m1"
-        app:layout_constraintEnd_toEndOf="@id/m1"
-        app:layout_constraintTop_toBottomOf="@+id/m1"
-        />
+        <EditText
+            android:id="@+id/tt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
 
-    <EditText
-        android:id="@+id/tt2"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
 
-        android:inputType="textEmailAddress"
-        android:hint="Enter your email"
-        android:textSize="20dp"
 
-        app:layout_constraintStart_toStartOf="@id/m1"
-        app:layout_constraintEnd_toEndOf="@id/m1"
-        app:layout_constraintTop_toBottomOf="@+id/tt1"
-        />
+        app:errorEnabled="true">
 
-    <EditText
-        android:id="@+id/tt3"
+        <EditText
+            android:id="@+id/tt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+
+            android:hint="Enter your email"
+            android:inputType="text"
+            android:textSize="20dp"
+
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
 
-        android:inputType="numberPassword"
-        android:hint="Enter your password"
-        android:textSize="20dp"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true"
+        >
 
-        app:layout_constraintStart_toStartOf="@id/m1"
-        app:layout_constraintEnd_toEndOf="@id/m1"
-        app:layout_constraintTop_toBottomOf="@+id/tt2"
-        />
+        <EditText
+            android:id="@+id/tt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:textSize="20dp"
+
+            app:layout_constraintEnd_toEndOf="@id/m1"
+            app:layout_constraintStart_toStartOf="@id/m1"
+            app:layout_constraintTop_toBottomOf="@+id/tt2" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
@@ -78,12 +111,9 @@
 
 
         android:textColor="#777"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tt1"
+        android:layout_gravity="center"
+
+       />
 
 
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/tt1" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
