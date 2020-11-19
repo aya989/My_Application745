@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -19,6 +21,12 @@ import static java.util.regex.Pattern.*;
 
 public class signing extends AppCompatActivity {
     Button sgn1;
+
+    private static final String[] neams=new String[]
+    {
+        "Aya","Ahmed","Ali"
+    };
+
     private TextInputLayout textemail;
     private TextInputLayout textusername;
     private TextInputLayout textpasword;
@@ -44,6 +52,8 @@ public class signing extends AppCompatActivity {
         textpasword = findViewById(R.id.text_input_password);
         sgn1 = findViewById(R.id.sign1);
 
+
+
         sgn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +62,19 @@ confirmInput();
 
             }
         });
+
+
+        AutoCompleteTextView editText =findViewById(R.id.tt1);
+        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,neams);
+                editText.setAdapter(adapter);
+
+
+
+
+
+
+
     }
 
 

@@ -31,11 +31,15 @@
         >
 
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/tt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:completionThreshold="1"
+            android:completionHint="Enter your name"
+            android:popupBackground="#AFAAAA"
+
 
             android:hint="Enter your name"
             android:inputType="textPersonName"

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".signing"></activity>
+        <activity android:name=".arraylist"></activity>
+        <activity android:name=".signing" />
         <activity android:name=".loging" />
         <activity android:name=".enterpage" />
         <activity android:name=".MainActivity" />
