@@ -4,57 +4,65 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class My_Adapter extends BaseAdapter {
+public class My_Adapter extends ArrayAdapter<Userlist> {
     Context context;
-    ArrayList<String> data;
-    String ractv[];
-    int rimg[];
+    int resorce;
 
-    public My_Adapter(Context c ,ArrayList<String> data ,String actv[],int imag[])
-    {
 
-        this.context=c;
-        this.data=data;
-        this.ractv=actv;
-        this.rimg=imag;
-    }
-    @Override
-    public int getCount() {
-        return data.size();
+
+
+    public My_Adapter(@NonNull Context context, int resource, @NonNull List<Userlist> objects) {
+        super(context, resource, objects);
+
+        this.context=context;
+        this.resorce=resource;
+
 
     }
 
-    @Override
-    public String getItem(int i) {
-        return data.get(i);
-    }
+
+
 
     @Override
     public long getItemId(int position) {
         return 0;
     }
 
+
+    @NonNull
     @Override
-    public View getView(int i, View view, ViewGroup parent) {
-
-        View v=view;
-        if(v==null)
-        {
-           v = LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1,null,false);
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
 
-        }
-        TextView tv =v.findViewById(android.R.id.text1);
-        String name= getItem(i);
+     convertView = LayoutInflater.from(context).inflate(resorce,parent,false);
 
-        tv.setText(name);
+     TextView tvname=(TextView) convertView.findViewById(R.id.tvname);
+     TextView tvactive=(TextView) convertView.findViewById(R.id.tvactive);
 
-        return v;
+     Userlist curruser = getItem(position);
+
+        tvname.setText(curruser.getName());
+        tvactive.setText(curruser.getActivity());
+
+
+
+        return convertView;
+
+
+
+
+
+
     }
 }

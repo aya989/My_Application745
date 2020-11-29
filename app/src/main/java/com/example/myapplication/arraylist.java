@@ -13,9 +13,6 @@ import java.util.ArrayList;
 public class arraylist extends AppCompatActivity {
  ListView lv;
 
- int img[]={R.drawable.d1,R.drawable.d2,R.drawable.d3,R.drawable.d4,R.drawable.d5,R.drawable.a1,R.drawable.a5,R.drawable.a8};
- String actv[]={"eman ahmed","ali ahmed","hoda salem","tahany adel","fatama mohamed","eman ahmed","ali ahmed","hoda salem","tahany adel","fatama mohamed"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,27 +20,22 @@ public class arraylist extends AppCompatActivity {
 
         lv=findViewById(R.id.test_list);
 
-        ArrayList<String> names=new ArrayList<>();
+        ArrayList<Userlist> values=new ArrayList<>();
 
-        names.add("Eman Ahmed");
-        names.add("Ali Ahmed");
-        names.add("Hoda Salem");
-        names.add("Tahany Adel");
-        names.add("fatma Mohamed");
-        names.add("Eman Ahmed");
-        names.add("Ali Ahmed");
-        names.add("Hoda Salem");
-        names.add("Tahany Adel");
-        names.add("fatma Mohamed");
-        names.add("Eman Ahmed");
-        names.add("Ali Ahmed");
-        names.add("Hoda Salem");
-        names.add("Tahany Adel");
-        names.add("fatma Mohamed");
+        values.add(new Userlist("aya","17s"));
+        values.add(new Userlist("asmaa","active"));
+        values.add(new Userlist("hoda","4h"));
+        values.add(new Userlist("mariem","active"));
+        values.add(new Userlist("ahmed","13h"));
+        values.add(new Userlist("ali","22m"));
+        values.add(new Userlist("mahmoud","16s"));
+        values.add(new Userlist("mena","45m"));
+        values.add(new Userlist("noha","active"));
 
 
 
-        My_Adapter adapter=new My_Adapter(this,names,actv,img);
+
+        My_Adapter adapter=new My_Adapter(this,R.layout.layoutlist,values);
 
         lv.setAdapter(adapter);
 
